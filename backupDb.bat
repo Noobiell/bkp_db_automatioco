@@ -2,8 +2,8 @@
 cls
 
 REM Define o usuário e senha do banco de dados
-set dbUser=perezbarros
-set dbPassword=Dpbarros#2022
+set dbUser=xxxx
+set dbPassword=xxxx
 
 REM Define a pasta que será feito o backup no padrão ...\<dia do mês>\<hora atual>
 set backupDir=C:\backup\%date:~0,2%\%time:~0,2%\
@@ -21,7 +21,7 @@ if not exist "%backupDir%" (
 )
 
 REM Executa o dump, aqui precisa configurar o host e o nome do banco de dados (locais com xxx)
-%mysqldump% --host="perezbarros.mysql.dbaas.com.br" --user=%dbUser% --password=%dbPassword% perezbarros > "%backupDir%\%file%"
+%mysqldump% --host=" COLOCAR O HOST DO DB AQUI " --user=%dbUser% --password=%dbPassword% COLOCAR O NOME DA TABELA AQUI > "%backupDir%\%file%"
 
 REM Compacta o arquivo com o dump
 %zip% a -tgzip "%backupDir%\%file%.gz" "%backupDir%\%file%"
